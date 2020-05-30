@@ -31,8 +31,12 @@
           </nav>
         <div class="container-fluid" align='center'>
             <h1>Booksharing</h1>
-            <img src="{{url_for('static', filename='books2.jpg')}}" class="img-rounded" alt="libri" width="304" height="236">
-            <p>This is some text.</p>
+            <img src="{{url_for('static', filename='books2.jpg')}}" class="img-rounded" alt="Menù rapido" width="500" height="300">
+            <div class="btn-group" align="center">
+              <a href="/allbooks"><button type="button" class="btn btn-primary">Visualizza tutti i libri</button></a>
+              <a href="/research"><button type="button" class="btn btn-primary">Ricerca</button></a>
+              <a href="/addbook"><button type="button" class="btn btn-primary">Inserisci libro</button></a>
+            </div> 
           </div> 
     </body>
 </html>
