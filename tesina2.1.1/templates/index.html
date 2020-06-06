@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/booktstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>      
+            <!-- A grey horizontal navbar that becomes vertical on small screens -->
+          <nav class="navbar navbar-expand-sm bg-light">
+
+
+          </nav>  
+        <div class="container-fluid" align='center'>
+            <h1>Booksharing</h1>
+            <img src="{{url_for('static', filename='books2.jpg')}}" class="img-rounded" alt="Menù rapido" width="500" height="300">
+            <div class="btn-group" align="center">
+              <a href="/allbooks"><button type="button" class="btn btn-primary">Visualizza tutti i libri</button></a>
+              <a href="/research"><button type="button" class="btn btn-primary">Ricerca</button></a>
+              <a href="/addbook"><button type="button" class="btn btn-primary">Inserisci libro</button></a>
+              <a href="/addcommento"><button type="button" class="btn btn-primary">Inserisci commento</button></a>
+              <a href="/recensioni"><button type="button" class="btn btn-primary">Recensioni</button></a>
+
+            </div> 
+          </div> 
+    </body>
+</html>

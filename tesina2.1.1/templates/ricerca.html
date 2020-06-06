@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Ricerca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <a href="/"><img src="{{url_for('static',filename='books.png')}}" align='left' width="100px" height="50px"></a>
+
+    <div class="container">
+      <h1>Ricerca libro</h1>
+    </br>
+      <form action="" method="GET" align="center">
+        <p>Inserisci titolo libro</p>  
+        <input type="text" placeholder="ricerca" name="ricerca" value="{{
+          request.form.ricerca }}">
+          <table border="1" align="center">
+            
+            {% for result in results %}
+        <tr>
+            <td> {{ result }}  </td>
+        </tr>
+            {% endfor %}
+        
+    </table>
+        <input class="btn btn-primary" type="submit" value="Ricerca">
+        
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

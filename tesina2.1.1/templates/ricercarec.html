@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/booktstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <a href="/"><img src="{{url_for('static',filename='books.png')}}" align='left' width="100px" height="50px"></a>
+       
+       <h2 align="center">Ricerca libro</h2>
+       <form action="" method="GET" class="form-control" align="center">
+            <div class="bootstrap-select-wrapper">
+            <label>Libro</label>
+                <select title="Scegli una opzione" data-live-search="true" data-live-search-placeholder="Cerca opzioni">
+                {% for risultato in risultati %}    
+                <option value="{{ request.form.risultato }}">{{ risulato }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Ricerca libro">
+        </form>
+         </br></br>
+    
+    </body>
+</html>
