@@ -1,0 +1,51 @@
+              
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/booktstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <a href="/"><img src="{{url_for('static',filename='books.png')}}" align='left' width="100px" height="50px"></a>
+        </br></br></br></br>
+        <div class="form-group w-75" align="center">
+            
+                <h1>Aggiungi commento</h1>
+                </br>
+                <form action="/addcommento" method="POST" class="form-control">
+                    
+                <p align="center">Titolo libro</p>  
+                <div class="bootstrap-select-wrapper">
+                    <label>Libro</label>
+                    <select name="idLibroComment" title="Scegli una opzione" data-live-search="true" data-live-search-placeholder="Cerca opzioni" >
+                    {% for result in results %}    
+                    <option  value="{{ result[0] }}">{{ result[1] }}</option>
+                    {% endfor %}
+                    </select>
+                    <!--request.form.idLibro-->
+                </div>
+                </br></br>
+                <div class="form-group" >
+                    <label for="comment">Recensione:</label>
+                    <textarea class="form-control" rows="5" name="comment" id="comment" width="100000px" value="{{ request.form.comment }}"></textarea>
+                </div> 
+                </br></br>
+                <input class="btn btn-primary" type="submit" value="Inserisci commento">            
+                </form>
+
+                {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }}
+                {% endif %}
+            
+        </div>
+    </body>
+</html>
+
+          
