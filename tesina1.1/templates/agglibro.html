@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/booktstrap/4.5.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <a href="/"><img src="{{url_for('static',filename='books.png')}}" align='left'></a>
+        <div class="container" align="center">
+            <h1>Aggiungi libro</h1>
+          </br>
+            <form action="" method="post">
+              <p>Titolo libro</p>  
+              <input type="text" placeholder="titolo" name="titolo" value="{{
+                request.form.titolo }}">
+              </br> <p>autore</p> 
+               <input type="text" placeholder="autore" name="autore" value="{{
+                request.form.autre }}">
+              </br> <p> anno pubblicazione</p>
+                <input type="text" placeholder="anno" name="anno" value="{{
+                  request.form.anno }}"></br></br>
+              </br> <p> genere</p>
+              <input type="text" placeholder="genere" name="genere" value="{{
+                request.form.genere }}"></br></br>
+              <input class="btn btn-primary" type="submit" value="Inserisci libro">
+              
+            </form>
+
+            {% if error %}
+              <p class="error"><strong>Error:</strong> {{ error }}
+            {% endif %}
+          </div>
+    </body>
+</html>
